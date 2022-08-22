@@ -1,0 +1,15 @@
+version: '3.9'
+
+services:
+  minio1:
+    image: quay.io/minio/minio:latest
+    ports:
+      - 9000:9000
+      - 9001:9001
+    environment:
+      - MINIO_ACCESS_KEY=ryo
+      - MINIO_SECRET_KEY=trJXsApw9HL*RPWoc73yf
+    command: 
+      server /data --console-address ":9001"
+    restart: always
+
